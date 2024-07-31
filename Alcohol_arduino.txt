@@ -1,0 +1,24 @@
+#define sensorDigital 4
+#define LED 5
+#define motor 12
+void setup(){
+pinMode(sensorDigital, INPUT);
+pinMode(LED, OUTPUT);
+pinMode(motor, OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+  digitalWrite(motor,HIGH);
+bool digital= digitalRead(sensorDigital);
+
+Serial.print("Digital value");
+Serial.println(digital);
+if(digital==0){
+  digitalWrite(LED,HIGH);
+  digitalWrite(motor,LOW);
+  delay(1000);
+}else{
+  digitalWrite(LED, LOW);
+  
+}
+}
